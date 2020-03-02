@@ -1,0 +1,146 @@
+$warning_color: #eb5b5b;
+$tabMinHeight: 70vh;
+%tabWrapper {
+    position: relative;
+    height: 70vh;
+}
+
+%tabRows {
+    overflow-y: auto;
+    height: calc($tabMinHeight - 2.6em);
+}
+
+%addContainer {
+    display: flex;
+    padding: 5px;
+    background: #f8f9fa;
+    padding-bottom: 5px;
+    position: absolute;
+    width: 100%;
+    bottom: 0;
+    height: 2.6em;
+    justify-content: flex-end;
+}
+
+%divButton {
+    color: #555;
+    border: 1px solid #ccc;
+    padding: 3px 6px;
+    border-radius: 2px;
+    background: #f8f9fa;
+    margin-left: 15px;
+}
+
+%icon {
+    color: gray;
+    margin: 0px 5px;
+    cursor: pointer;
+    font-size: 1.7em;
+}
+
+.warning-block {
+    color: $warning_color;
+    padding-top: 20%;
+}
+
+.warnings {
+    color: red;
+    font-size: .8em;
+}
+
+.tab-сontent {
+    min-height: $tabMinHeight;
+}
+
+.modal-wrapper {
+    position: fixed;
+    top: 15%;
+    left: 30%;
+    width: 40%;
+    z-index: 100;
+}
+
+.modal-overlay{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    min-height: 100vh;
+    z-index: 10;
+    background: black;
+    opacity: 0.7;
+}
+
+.add-input {
+    flex: 1 1;
+    padding-left: 10px;
+}
+
+.MuiTableCell-root {
+    padding: 5px !important;
+}
+
+#categories_wrapper {
+    @extend %tabWrapper;
+    #categories_rows {
+        @extend %tabRows;
+        .category-row{
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            border: 1px solid #e8e8e8;
+            text-align: center;
+            font-family: 'calibri, verdana';
+            background: white;
+            .category-icon {
+                @extend %icon;
+            }
+            .category-name {
+                margin-left: 7px;
+                color: #444;
+            }
+        }
+    }
+    #add-container{
+        @extend %addContainer;
+        .div-button {
+            @extend %divButton;
+        }
+        
+    }
+}
+
+#product-wrapper {
+    @extend %tabWrapper;
+    .product-head {
+        font-weight: bold;
+        line-height: 0.6rem;
+        background: #fdfdfd;
+        height: 0.4em;
+        text-align: center;
+        padding: 1.2em 0px !important;
+    }
+    #product-rows {
+        @extend %tabRows;
+        .product-param {
+            margin-left: 7px;
+            color: #444;
+            text-align: center;
+        }
+        .product-icon-cell {
+            width: 2em;            
+            .product-icon {
+                @extend %icon;
+            }
+        }
+    }
+    #add-container {
+        @extend %addContainer;
+        .div-button {
+            @extend %divButton;
+        }
+    }
+}
+
+
